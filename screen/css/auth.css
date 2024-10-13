@@ -1,0 +1,94 @@
+/* CSS de base, inspiré de la page précédente */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5F5; /* Couleur de fond douce */
+    color: #000000; /* Couleur du texte */
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+}
+
+/* Conteneur de formulaire */
+.formContainer {
+    background: rgba(255, 255, 255, 0.9); /* Fond légèrement flou */
+    backdrop-filter: blur(10px); /* Flou en arrière-plan */
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    padding: 40px;
+    position: relative; /* Nécessaire pour le flou */
+    transition: transform 0.3s ease;
+}
+
+/* Titres */
+h2 {
+    text-align: center;
+    color: #5A8A5E; /* Couleur du titre harmonisée */
+    margin-bottom: 20px;
+}
+
+/* Champs de saisie */
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #00B67D; /* Couleur de la bordure des champs */
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Effet au focus sur les champs */
+input:focus {
+    border-color: #008f66; /* Couleur au focus */
+    outline: none; /* Supprime le contour par défaut */
+}
+
+/* Bouton */
+.btn {
+    background-color: #5A8A5E; /* Couleur de fond du bouton harmonisée */
+    color: #FFFFFF; /* Couleur du texte du bouton */
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #4B7A4E; /* Couleur au survol */
+}
+
+/* Footer du formulaire */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer a {
+    color: #5A8A5E; /* Couleur du lien harmonisée */
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline; /* Souligne le lien au survol */
+}

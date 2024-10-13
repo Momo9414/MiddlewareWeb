@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="auth.css">
+    <title>Bibliothèque en Ligne - Inscription</title>
+</head>
+<body>
+    <div class="container">
+        <div class="formContainer">
+            <h2 id="formTitle">Créer un compte</h2>
+            <form id="form" action="/api/signup" method="POST">
+                <input type="text" placeholder="Nom complet" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <button type="submit" class="btn">S'inscrire</button>
+                <p class="form-footer">Déjà inscrit ? <a href="login.html" id="switchToLogin">Se connecter</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="livre.css">
+    <title>Enregistrement de Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">Bibliothèque en Ligne</div>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#.html">Bibliothèque</a></li>
+                <li><a href="livre.html">Nouveau doc</a></li>
+
+                <li><a href="login.html"></a></li>
+                <li><a href="signup.html"></a></li>
+                <li><a href="login.html"></a></li>
+                <li><a href="signup.html"></a></li>
+
+                <li><a href="login.html">Connexion</a></li>
+                <li><a href="signup.html">Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="formContainer">
+            <h2 id="formTitle">Enregistrer un Document</h2>
+            <form id="uploadForm" action="/api/upload" method="POST" enctype="multipart/form-data">
+                <input type="text" placeholder="Nom du Document" name="documentName" required>
+                <input type="date" name="saveDate" required>
+                <input type="file" name="fileUpload" accept=".pdf,.docx,.xlsx,.pptx" required>
+                <button type="submit" class="btn">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Bibliothèque en Ligne. Tous droits réservés.</p>
+            <ul class="footer-menu">
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">Conditions d'utilisation</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
