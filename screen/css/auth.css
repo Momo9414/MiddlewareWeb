@@ -1,4 +1,4 @@
-/* CSS de base, inspiré de la page précédente */
+/* CSS de base pour l'authentification */
 
 * {
     margin: 0;
@@ -7,88 +7,117 @@
     font-family: 'Arial', sans-serif;
 }
 
-html, body {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
     background-color: #F5F5F5; /* Couleur de fond douce */
-    color: #000000; /* Couleur du texte */
+    color: #333; /* Couleur du texte */
 }
 
-/* Container principal */
+/* Navbar */
+header {
+    background-color: #A3D9A5; /* Couleur douce de la navbar */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    color: #FFFFFF; /* Couleur du texte de la marque */
+    font-size: 1.5rem;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu li a {
+    color: #FFFFFF; /* Couleur des liens */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+    color: #E8F8E5; /* Couleur au survol */
+}
+
+/* Container */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Prend toute la hauteur de l'écran */
+    min-height: calc(100vh - 60px); /* Ajuste la hauteur pour le footer */
+    padding: 20px;
 }
 
-/* Conteneur de formulaire */
 .formContainer {
-    background: rgba(255, 255, 255, 0.9); /* Fond légèrement flou */
-    backdrop-filter: blur(10px); /* Flou en arrière-plan */
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
+    background: #FFFFFF; /* Couleur de fond du formulaire */
+    border-radius: 10px;
     padding: 40px;
-    position: relative; /* Nécessaire pour le flou */
-    transition: transform 0.3s ease;
-}
-
-/* Titres */
-h2 {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Largeur du formulaire */
     text-align: center;
-    color: #5A8A5E; /* Couleur du titre harmonisée */
+}
+
+/* Formulaire */
+#formTitle {
     margin-bottom: 20px;
+    color: #5A8A5E; /* Couleur du titre */
 }
 
-/* Champs de saisie */
-input {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #00B67D; /* Couleur de la bordure des champs */
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-/* Effet au focus sur les champs */
-input:focus {
-    border-color: #008f66; /* Couleur au focus */
-    outline: none; /* Supprime le contour par défaut */
-}
-
-/* Bouton */
+input[type="text"],
+input[type="email"],
+input[type="password"],
 .btn {
-    background-color: #5A8A5E; /* Couleur de fond du bouton harmonisée */
-    color: #FFFFFF; /* Couleur du texte du bouton */
-    border: none;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 1rem;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+
+.btn {
+    background-color: #5A8A5E; /* Couleur du bouton */
+    color: #FFFFFF;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%;
 }
 
 .btn:hover {
-    background-color: #4B7A4E; /* Couleur au survol */
+    background-color: #4B7A4E; /* Couleur au survol du bouton */
 }
 
-/* Footer du formulaire */
-.form-footer {
+/* Footer */
+footer {
+    background-color: #A3D9A5; /* Couleur douce du footer */
+    color: #FFFFFF;
     text-align: center;
-    margin-top: 20px;
+    padding: 20px 0;
 }
 
-.form-footer a {
-    color: #5A8A5E; /* Couleur du lien harmonisée */
+.footer-content {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.footer-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.footer-menu li a {
+    color: #FFFFFF; /* Couleur des liens du footer */
     text-decoration: none;
 }
 
-.form-footer a:hover {
+.footer-menu li a:hover {
     text-decoration: underline; /* Souligne le lien au survol */
 }
