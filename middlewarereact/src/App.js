@@ -2,52 +2,65 @@ import './styles/App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-
 import Home from './components/Home/Home';
 import Bibliotheque from './components/bibliothèque/bibliotheque';
 import Livre from './components/Livre/Livre';
 import Login from './components/Auth/Login';
 import Signup from './components/Auth/Signup';
 
-
 function App() {
-	const [token, setToken] = useState(localStorage.getItem('authToken'));
+  const [token, setToken] = useState(localStorage.getItem('authToken'));
 
-	// Mettre à jour l'état lorsque le token change
-	const handleLogin = (newToken) => {
-	  localStorage.setItem('authToken', newToken);
-	  setToken(newToken);
-	};
-  
-	const handleLogout = () => {
-	  localStorage.removeItem('authToken');
-	  setToken(null);
-	};
-  
-	useEffect(() => {
-	  const savedToken = localStorage.getItem('authToken');
-	  setToken(savedToken);
-	}, []);
+  const handleLogin = (newToken) => {
+    localStorage.setItem('authToken', newToken);
+    setToken(newToken);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    setToken(null);
+  };
+
+  useEffect(() => {
+    const savedToken = localStorage.getItem('authToken');
+    setToken(savedToken);
+  }, []);
+
   return (
     <Router>
       <div className="App">
         <header className="navbar">
-          <div className="navbar-brand">Bibliothèque en Ligne</div>
-          <ul className="navbar-menu">
-            <li><Link to="/">Accueil</Link></li>
-            <li><Link to="/bibliotheque">Bibliothèque</Link></li>
-            <li><Link to="/livre">Nouveau doc</Link></li>
-            {
-              !localStorage.getItem('authToken') && <> <li><Link to="/login">Connexion</Link></li> <li><Link to="/signup">Inscription</Link></li> </>
-            }
-            {
-              localStorage.getItem('authToken') && <> <li><Link to="/logout" onClick={handleLogout}>Deconnexion</Link></li> </>
-            }
-            
-          </ul>
+          <div className="navbar-container">
+            <div className="navbar-brand">Bibliothèque en Ligne</div>
+            <nav className="navbar-menu">
+              <Link to="/">Accueil</Link>
+              <Link to="/bibliotheque">Bibliothèque</Link>
+              <Link to="/livre">Nouveau doc</Link>
+              {
+                !token ? (
+                  <>
+                    <Link to="/login">Connexion</Link>
+                    <Link to="/signup">Inscription</Link>
+                  </>
+                ) : (
+                  <Link to="/logout" onClick={handleLogout}>Déconnexion</Link>
+                )
+              }
+            </nav>
+            <button className="demo-btn">Book a Demo</button>
+          </div>
         </header>
 
         <main className="main-content">
+          <div className="hero-section">
+            <h1>Optimisez votre gestion de documents</h1>
+            <p>La Bibliothèque en Ligne vous permet de gérer vos documents en toute simplicité.</p>
+            <form className="search-form">
+              <input type="text" placeholder="Quel document cherchez-vous ?" />
+              <input type="text" placeholder="Où le cherchez-vous ?" />
+              <button type="submit">Rechercher</button>
+            </form>
+          </div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/bibliotheque" element={<Bibliotheque />} />
@@ -59,11 +72,13 @@ function App() {
         </main>
 
         <footer className="footer">
-          <p>&copy; 2024 Bibliothèque en Ligne. Tous droits réservés.</p>
-          <ul className="footer-menu">
-            <li><Link to="/privacy">Politique de confidentialité</Link></li>
-            <li><Link to="/terms">Conditions d'utilisation</Link></li>
-          </ul>
+          <div className="footer-content">
+            <p>&copy; 2024 Bibliothèque en Ligne. Tous droits réservés.</p>
+            <nav className="footer-menu">
+              <Link to="/privacy">Politique de confidentialité</Link>
+              <Link to="/terms">Conditions d'utilisation</Link>
+            </nav>
+          </div>
         </footer>
       </div>
     </Router>

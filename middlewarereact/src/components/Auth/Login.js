@@ -36,9 +36,9 @@ function Login({ onLogin }) {
     }
 
     return (
-      <div>
+      <div className="auth">
         <h1>Connexion</h1>
-        <form>
+        <form className="loginn-form">
           <label>Email :</label>
           <input value={email} onChange={(e) => {handleChange(e)}} type="email" name="email" required />
   

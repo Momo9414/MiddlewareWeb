@@ -50,9 +50,9 @@ function Livre() {
     };
 
     return (
-        <div>
+        <div className="hero-section_livre" >
             <h1>Ajouter un Nouveau Document</h1>
-            <form onSubmit={handleSubmit}> {    }
+            <form onSubmit={handleSubmit} className="hero-section_livre-form" > {    }
                 <label>Titre du document :</label>
                 <input type="text" name="title" required onChange={handleChange} /> {/* Ajoutez onChange */}
 

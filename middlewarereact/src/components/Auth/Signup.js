@@ -61,9 +61,9 @@ function Signup() {
     };
 
     return (
-        <div>
+        <div className="auth">
             <h1>Inscription</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="signupp-form">
                 <label>Nom :</label>
                 <input type="text" name="name" value={name} onChange={handleChange} required />
 
