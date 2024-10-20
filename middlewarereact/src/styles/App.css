@@ -8,6 +8,7 @@ body {
 
 .App {
   text-align: center;
+  min-height: 100vh;
 }
 
 /* Navbar styles */
@@ -15,6 +16,9 @@ body {
   background-color: #fff;
   border-bottom: 1px solid #eaeaea;
   padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .navbar-container {
@@ -66,33 +70,32 @@ body {
 
 /* Hero section */
 .hero-section {
-  padding: 10% 5%;
+  padding: 8% 5%;
   background-color: #00B67D;
   color: #fff;
   text-align: left;
 }
 
-.hero-section_livre{
+.hero-section_livre {
   padding: 3% 5%;
 }
 
 .hero-section_livre-form {
   display: flex;
-  flex-direction: column; 
-  justify-content: space-between; 
-  align-items: center; 
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px; 
-}
-.hero-section_livre-form input {
-  padding: 5px; 
 }
 
 .hero-section_livre-form label {
-  padding: 5px 0 5px 0; 
+  padding: 2%;
 }
 
+.hero-section_livre-form button {
+  margin-top: 2%;
+}
 
 .hero-section h1 {
   font-size: 48px;
@@ -112,9 +115,9 @@ body {
 
 .search-form input {
   padding: 10px;
-  width: 200px;
+  width: 250px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid #ddd;
 }
 
 .search-form button {
@@ -124,33 +127,72 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .search-form button:hover {
   background-color: #E57B00;
 }
 
+/* Auth sections */
 .auth {
-  padding: 3% 5%;
-}
-.loginn-form {
-  display: flex;
-  flex-direction: column; 
-  justify-content: space-between; 
-  align-items: center; 
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px; 
+  padding: 2% 2%;
 }
 
-.signupp-form {
+.loginn-form, .signupp-form {
   display: flex;
-  flex-direction: column; 
-  justify-content: space-between; 
-  align-items: center; 
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px; 
+}
+
+.loginn-form label, .signupp-form label {
+  padding: 2%;
+}
+
+.loginn-form button, .signupp-form button {
+  margin-top: 2%;
+  background-color: #00B67D;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginn-form button:hover, .signupp-form button:hover {
+  background-color: #00875A;
+}
+
+/* Table styles */
+.livre-table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.livre-table th, .livre-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.livre-table th {
+  background-color: #00B67D;
+  color: white;
+}
+
+.livre-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.livre-table tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
 }
 
 /* Footer styles */
@@ -159,6 +201,7 @@ body {
   color: white;
   padding: 20px 0;
   margin-top: 50px;
+  text-align: center;
 }
 
 .footer-content {
@@ -167,6 +210,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-menu {
@@ -182,4 +226,56 @@ body {
 
 .footer-menu a:hover {
   text-decoration: underline;
+}
+
+/* General form styles */
+.auth, .hero-section_livre {
+  padding: 3% 5%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.auth h1, .hero-section_livre h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  background-color: #FF8A00;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.form-container button:hover {
+  background-color: #E57B00;
 }

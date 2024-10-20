@@ -38,7 +38,7 @@ function Signup() {
         // Envoyer la requête au backend
         try {
             const response = await axios.post(
-                'http://192.168.252.45:3000/auth/inscription',
+                'http://192.168.252.157:3000/auth/inscription',
                 {
                     nom: name,
                     email: email,
@@ -63,7 +63,7 @@ function Signup() {
     return (
         <div className="auth">
             <h1>Inscription</h1>
-            <form onSubmit={handleSubmit} className="signupp-form">
+            <form onSubmit={handleSubmit} className="form-container">
                 <label>Nom :</label>
                 <input type="text" name="name" value={name} onChange={handleChange} required />
 
@@ -79,6 +79,7 @@ function Signup() {
                 <button type="submit">S'inscrire</button>
             </form>
         </div>
+
     );
 }
 
